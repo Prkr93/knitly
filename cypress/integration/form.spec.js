@@ -16,15 +16,13 @@ describe('Form', () => {
       .get('input.y-val').type('5')
 
       .get('.create-form')
-      .children('button.create-button')
+      .children('button.create-button').should('contain', 'Create Pattern')
       .click()
       .url().should('contain', 'http://localhost:3000/5x5')
   });
 
-  it.skip('should automatically create a grid upon visiting the url', () => {
-    cy.visit('http://localhost:3000/5x5')
-      .get('section.pattern')
-      .children('article.stitch').should('have.length', 25)
+  it.skip('should not be able to make a pattern with a non positive interger', () => {
+    cy.visit('http://localhost:3000/')
   });
 
   

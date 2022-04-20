@@ -1,25 +1,33 @@
-import logo from './logo.svg';
+// import logo from './logo.svg';
+import React, { Component } from 'react';
 import './css/style.css';
+import Pattern from './js/Pattern';
+import Form from './js/Form';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends Component {
+  constructor() {
+    super();
+    this.state = {
+      x: 0,
+      y: 0
+    }
+  }
+
+  createPattern = (x, y) => {
+    console.log('woot')
+    this.setState({x: x, y: y});
+  }
+
+  render() {
+    let pattern = this.state.x.length ? [this.state.x, this.state.y] : '';
+
+    return (
+      <main>
+        <Form createPattern={this.createPattern} />
+        <Pattern pattern={pattern} />
+      </main>
+    )
+  }
 }
 
 export default App;

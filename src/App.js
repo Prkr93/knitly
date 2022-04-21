@@ -19,12 +19,10 @@ class App extends Component {
   }
 
   render() {
-    let pattern = this.state.x.length ? [this.state.x, this.state.y] : '';
-
     return (
       <main>
-        <Form createPattern={this.createPattern} />
-        <Pattern pattern={pattern} />
+        {!this.state.x && <Form createPattern={this.createPattern} />}
+        {!!this.state.x && <Pattern pattern={[this.state.x, this.state.y]} />}
       </main>
     )
   }

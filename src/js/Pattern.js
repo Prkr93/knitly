@@ -1,30 +1,37 @@
 import React, { Component } from 'react';
 
 class Pattern extends Component {
-  constructor() {
+  constructor({pattern}) {
     super();
-    this.state = {
-      pattern: {
-        
-      }
-    }
+    [this.x, this.y] = pattern;
+    this.state = {}
   }
 
   componentDidMount() {
-    
+    for (let x = 1; x <= this.x; x++) {
+      let row = new Map();
+      for (let y = 1; y <= this.y; y++) {
+        row.set(y, 'purl')
+      }
+      this.setState({[`row-${x}`]: row})
+    }
   }
 
   render() {
-    const stitches = Object.keys(this.state.pattern);
-    const pattern = stitches.map(stitch => {
-      return (
-        <div className={stitch} key={stitch}></div>
-      )
-    });
-    return (
-      <div>{ pattern }</div>
-    )
+    let pattern = [];
+    for (const row in this.state) {
+      let rowContainer = [];
+      for (const [ , stitch] of this.state[row]) {
+        let patternStitch = React.createElement('article', {className: `stitch ${stitch}`}, 'hello')
+        rowContainer.push(patternStitch);
+      }
+      let patternRow = React.createElement('section', {className: `row ${row}`}, rowContainer)
+      pattern.push(patternRow);
+    }
 
+    return (
+      <section className='pattern'>{pattern}</section>
+    )
   }
 }
 

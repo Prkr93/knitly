@@ -3,7 +3,7 @@ import {Component} from 'react';
 class Form extends Component {
   constructor({createPattern}) {
     super();
-    //this.props = props;
+    // this.props = props;
     this.createPattern = createPattern;
     this.state = {
       x: '',
@@ -32,7 +32,7 @@ class Form extends Component {
           <label>Y-Value: </label>
           <input className='y-val' name='y' val={this.state.y} onChange={this.handleChange} />
         </div>
-        <button type='submit'>Create Pattern</button>
+        <button>Create Pattern</button>
       </form>
     )
   }

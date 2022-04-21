@@ -1,10 +1,8 @@
 import {Component} from 'react';
 
 class Form extends Component {
-  constructor({createPattern}) {
-    super();
-    // this.props = props;
-    this.createPattern = createPattern;
+  constructor(props) {
+    super(props);
     this.state = {
       x: '',
       y: ''
@@ -17,7 +15,7 @@ class Form extends Component {
 
   createGrid = (e) => {
     e.preventDefault();
-    this.createPattern(parseInt(this.state.x), parseInt(this.state.y))
+    this.props.createPattern(parseInt(this.state.x), parseInt(this.state.y))
   }
 
   render() {

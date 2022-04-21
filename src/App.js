@@ -7,22 +7,21 @@ import Form from './js/Form';
 class App extends Component {
   constructor() {
     super();
+    this.createPattern = this.createPattern.bind(this);
     this.state = {
-      x: 0,
-      y: 0
+      dimensions: []
     }
   }
 
   createPattern = (x, y) => {
-    console.log('woot')
-    this.setState({x: x, y: y});
+    this.setState({dimensions: [x, y]});
   }
 
   render() {
     return (
       <main>
-        {!this.state.x && <Form createPattern={this.createPattern} />}
-        {!!this.state.x && <Pattern pattern={[this.state.x, this.state.y]} />}
+        {!this.state.dimensions[0] && <Form createPattern={this.createPattern} />}
+        {!!this.state.dimensions[0] && <Pattern dimensions={this.state.dimensions} />}
       </main>
     )
   }

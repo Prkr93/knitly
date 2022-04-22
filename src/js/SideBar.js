@@ -1,11 +1,11 @@
 import StitchOptions from "./StitchOptions";
 import MirrorMode from "./MirrorMode";
 
-const SideBar = () => {
+const SideBar = (props) => {
   return (
     <section className='side-bar'>
-      <StitchOptions />
-      <MirrorMode />
+      <StitchOptions setStitchType={props.setStitchType} setStitchColor={props.setStitchColor} />
+      <MirrorMode setMirrorMode={props.setMirrorMode} />
       {/* <SavePattern /> */}
     </section>
   )

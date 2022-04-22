@@ -1,8 +1,8 @@
 import { Component } from 'react';
 
 class MirrorMode extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
       mirrorMode: false
     }
@@ -10,6 +10,7 @@ class MirrorMode extends Component {
 
   toggleMirrorMode = () => {
     this.setState({mirrorMode: this.state.mirrorMode ? false : true});
+    this.props.setMirrorMode(this.state.mirrorMode);
   }
 
   render() {

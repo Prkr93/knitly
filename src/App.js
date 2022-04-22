@@ -12,7 +12,8 @@ class App extends Component {
     this.state = {
       dimensions: [],
       stitchType: 'purl',
-      backgroundColor: ''
+      stitchColor: 'white',
+      mirrorMode: 'true'
     }
   }
 
@@ -24,12 +25,33 @@ class App extends Component {
     this.setState({stitchType: selectedType});
   }
 
+  setStitchColor = (color) => {
+    this.setState({ stitchColor: color})
+  }
+
+  setMirrorMode = (bool) => {
+    this.setState({mirrorMode: bool});
+  }
+
   render() {
     return (
       <main>
         {!this.state.dimensions[0] && <Form createPattern={this.createPattern} />}
-        {!!this.state.dimensions[0] && <Pattern dimensions={this.state.dimensions} stitchType={this.state.stitchType} backgroundColor={this.state.backgroundColor} />}
-        {!!this.state.dimensions[0] && <SideBar setStitchType={this.setStitchType} />}
+
+        {!!this.state.dimensions[0] && 
+          <Pattern 
+            dimensions={this.state.dimensions} 
+            stitchType={this.state.stitchType} 
+            stitchColor={this.state.stitchColor} 
+          />}
+
+        {!!this.state.dimensions[0] && 
+          <SideBar 
+            setStitchType={this.setStitchType} 
+            setStitchColor={this.setStitchColor}
+            setMirrorMode={this.setMirrorMode}
+          />}
+
       </main>
     )
   }

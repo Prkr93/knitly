@@ -20,7 +20,7 @@ class Pattern extends Component {
   toggleStitch = (e) => {
     const [y, x] = e.target.id.split('x');
     let newRow = new Map(this.state[y])
-    newRow.set(parseInt(x), this.props.stitchType)
+    newRow.set(parseInt(x), `${this.props.stitchType} ${this.props.stitchColor}`)
     this.setState({[y]: newRow});
   }
 

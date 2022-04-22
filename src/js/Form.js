@@ -20,7 +20,7 @@ class Form extends Component {
 
   render() {
     return (
-      <form onSubmit={this.createGrid}>
+      <form onSubmit={(e) => this.createGrid(e)}>
         <h2>What dimensions would you like for your pattern?</h2>
         <div className='label-input x-val'>
           <label>X-Value: </label>

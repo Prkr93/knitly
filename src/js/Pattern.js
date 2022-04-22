@@ -24,17 +24,22 @@ class Pattern extends Component {
     this.setState({[y]: newRow});
   }
 
-  render() {
+  createPattern = () => {
     let pattern = [];
     for (const row in this.state) {
       let rowContainer = [];
       for (const [column, stitch] of this.state[row]) {
-        let patternStitch = React.createElement('article', {id: `${row}x${column}`, className: `stitch ${stitch}`, key: column, onClick: this.toggleStitch})
+        let patternStitch = React.createElement('article', { id: `${row}x${column}`, className: `stitch ${stitch}`, key: column, onClick: this.toggleStitch })
         rowContainer.push(patternStitch);
       }
-      let patternRow = React.createElement('section', {className: `row ${row}`, key: row}, rowContainer)
+      let patternRow = React.createElement('section', { className: `row ${row}`, key: row }, rowContainer)
       pattern.push(patternRow);
     }
+    return pattern;
+  }
+
+  render() {
+    let pattern = this.createPattern();
 
     return (
       <section className='pattern'>{pattern}</section>

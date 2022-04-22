@@ -80,6 +80,13 @@
       border: 1px solid $black;
     }
   }
+  &.indigo {
+    background-color: $indigo;
+    &:before, &:after {
+      background-color: $white;
+      border: 1px solid $black;
+    }
+  }
   &.violet {
     background-color: $violet;
     &:before, &:after {

@@ -1,4 +1,3 @@
-// import logo from './logo.svg';
 import React, { Component } from 'react';
 import './css/style.css';
 import Pattern from './js/Pattern';
@@ -8,7 +7,6 @@ import SideBar from './js/SideBar';
 class App extends Component {
   constructor() {
     super();
-    this.createPattern = this.createPattern.bind(this);
     this.state = {
       dimensions: [],
       stitchType: 'purl',

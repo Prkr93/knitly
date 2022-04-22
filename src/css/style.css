@@ -25,6 +25,14 @@
   background: #6a6a6a;
   border-radius: 50%;
 }
+.stitch.k2tog {
+  content: "";
+  display: block;
+  background: red;
+  width: 0.25em;
+  height: 2em;
+  transform: rotate(45deg);
+}
 .stitch.red {
   background-color: #E55934;
 }

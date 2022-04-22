@@ -17,12 +17,19 @@ class Pattern extends Component {
     }
   }
 
+  toggleStitch = (e) => {
+    const [y, x] = e.target.id.split('x');
+    let newRow = new Map(this.state[y])
+    newRow.set(parseInt(x), this.props.stitchType)
+    this.setState({[y]: newRow});
+  }
+
   render() {
     let pattern = [];
     for (const row in this.state) {
       let rowContainer = [];
       for (const [column, stitch] of this.state[row]) {
-        let patternStitch = React.createElement('article', {className: `stitch ${stitch}`, key: column})
+        let patternStitch = React.createElement('article', {id: `${row}x${column}`, className: `stitch ${stitch}`, key: column, onClick: this.toggleStitch})
         rowContainer.push(patternStitch);
       }
       let patternRow = React.createElement('section', {className: `row ${row}`, key: row}, rowContainer)

@@ -11,6 +11,18 @@
     background: $black;
     border-radius: 50%;
   }
+  
+  &.k2tog {
+    content: "";
+    display: block;
+    background: red;
+    width: 0.25em;
+    height: 2em;
+    transform: rotate(45deg);
+  }
+  &.ssk {
+
+  }
   &.red {
     background-color: $red;
   }

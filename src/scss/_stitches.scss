@@ -13,15 +13,49 @@
   }
   
   &.k2tog {
-    content: "";
-    display: block;
-    background: red;
-    width: 0.25em;
-    height: 2em;
-    transform: rotate(45deg);
+    &:before, &:after {
+      content: "";
+      display: block;
+      position: absolute;
+      background: $black;
+      width: 0.25em;
+      
+    }
+    &:before {
+      height: 1em;
+      left: 1.05em;
+      top: .8em;
+      transform: rotate(-45deg);
+    }
+    &:after {
+      height: 2em;
+      left: 0.8em;
+      transform: rotate(45deg);
+    }
   }
   &.ssk {
+    &:before,
+    &:after {
+      content: "";
+      display: block;
+      position: absolute;
+      background: $black;
+      width: 0.25em;
 
+    }
+
+    &:before {
+      height: 1em;
+      left: .7em;
+      top: .8em;
+      transform: rotate(45deg);
+    }
+
+    &:after {
+      height: 2em;
+      left: .95em;
+      transform: rotate(-45deg);
+    }
   }
   &.red {
     background-color: $red;

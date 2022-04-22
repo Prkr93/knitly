@@ -1,18 +1,15 @@
 .stitch {
+  //&.knit {}
   &.purl:after {
     content: '';
     display: block;
     position: absolute;
-    top: .25em;
-    left: .25em;
-    width: .5em;
-    height: .5em;
+    top: .625em;
+    left: .625em;
+    width: .75em;
+    height: .75em;
     background: $black;
     border-radius: 50%;
-  }
-  
-  &.knit {
-    background-color: $white;
   }
   &.red {
     background-color: $red;

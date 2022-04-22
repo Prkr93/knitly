@@ -59,6 +59,10 @@
   }
   &.red {
     background-color: $red;
+    &:before, &:after { 
+      background-color: $white;
+      border: 1px solid $black;
+    }
   }
   &.orange {
     background-color: $orange;
@@ -71,12 +75,24 @@
   }
   &.blue {
     background-color: $blue;
+    &:before, &:after {
+      background-color: $white;
+      border: 1px solid $black;
+    }
   }
   &.violet {
     background-color: $violet;
+    &:before, &:after {
+      background-color: $white;
+      border: 1px solid $black;
+    }
   }
   &.black {
     background-color: $black;
+    &:before, &:after {
+      background-color: $white;
+      border: 1px solid $black;
+    }
   }
   &.white {
     background-color: $white;

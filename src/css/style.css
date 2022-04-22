@@ -64,6 +64,10 @@
 .stitch.red {
   background-color: #E55934;
 }
+.stitch.red:before, .stitch.red:after {
+  background-color: #f9f9f9;
+  border: 1px solid #6a6a6a;
+}
 .stitch.orange {
   background-color: #F7B32B;
 }
@@ -76,11 +80,23 @@
 .stitch.blue {
   background-color: #0EB1D2;
 }
+.stitch.blue:before, .stitch.blue:after {
+  background-color: #f9f9f9;
+  border: 1px solid #6a6a6a;
+}
 .stitch.violet {
   background-color: #791E94;
 }
+.stitch.violet:before, .stitch.violet:after {
+  background-color: #f9f9f9;
+  border: 1px solid #6a6a6a;
+}
 .stitch.black {
   background-color: #6a6a6a;
+}
+.stitch.black:before, .stitch.black:after {
+  background-color: #f9f9f9;
+  border: 1px solid #6a6a6a;
 }
 .stitch.white {
   background-color: #f9f9f9;

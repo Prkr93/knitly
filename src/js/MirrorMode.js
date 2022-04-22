@@ -14,6 +14,7 @@ class MirrorMode extends Component {
   }
 
   render() {
+    console.log('mirrormode proprs', this.props.dimensions)
     return (
       <article>
         <h2>Mirror Mode</h2>

@@ -2,7 +2,53 @@
   display: flex;
 }
 
+.row {
+  display: flex;
+}
+
 .stitch {
-  width: 30px;
-  height: 30px;
+  width: 1em;
+  height: 1em;
+  border: 1px solid #6a6a6a;
+  position: relative;
+  background-color: #e9e9e9;
+}
+
+.stitch.purl:after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0.25em;
+  left: 0.25em;
+  width: 0.5em;
+  height: 0.5em;
+  background: #6a6a6a;
+  border-radius: 50%;
+}
+.stitch.knit {
+  background-color: #e9e9e9;
+}
+.stitch.red {
+  background-color: #E55934;
+}
+.stitch.orange {
+  background-color: #F7B32B;
+}
+.stitch.yellow {
+  background-color: #F7F052;
+}
+.stitch.green {
+  background-color: #80FF72;
+}
+.stitch.blue {
+  background-color: #0EB1D2;
+}
+.stitch.violet {
+  background-color: #791E94;
+}
+.stitch.black {
+  background-color: #6a6a6a;
+}
+.stitch.white {
+  background-color: #e9e9e9;
 }

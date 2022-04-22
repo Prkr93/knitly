@@ -1,0 +1,41 @@
+.stitch {
+  &.purl:after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: .25em;
+    left: .25em;
+    width: .5em;
+    height: .5em;
+    background: $black;
+    border-radius: 50%;
+  }
+  
+  &.knit {
+    background-color: $white;
+  }
+  &.red {
+    background-color: $red;
+  }
+  &.orange {
+    background-color: $orange;
+  }
+  &.yellow {
+    background-color: $yellow;
+  }
+  &.green {
+    background-color: $green;
+  }
+  &.blue {
+    background-color: $blue;
+  }
+  &.violet {
+    background-color: $violet;
+  }
+  &.black {
+    background-color: $black;
+  }
+  &.white {
+    background-color: $white;
+  }
+}

@@ -11,7 +11,7 @@ class Pattern extends Component {
     for (let x = 1; x <= thisX; x++) {
       let row = new Map();
       for (let y = 1; y <= thisY; y++) {
-        row.set(y, 'purl')
+        row.set(y, 'knit')
       }
       this.setState({[x]: row})
     }

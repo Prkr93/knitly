@@ -19,8 +19,8 @@ class Pattern extends Component {
 
   getMatchingStitch = () => {
     const legend = {
-      knit: 'purl',
-      purl: 'knit',
+      knit: 'knit',
+      purl: 'purl',
       k2tog: 'ssk',
       ssk: 'k2tog',
     }

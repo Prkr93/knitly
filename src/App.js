@@ -32,6 +32,10 @@ class App extends Component {
     this.setState({mirrorMode: bool});
   }
 
+  divAndConq = (mirrors) => {
+    this.setState({mirrors: mirrors})
+  }
+
   render() {
     return (
       <main>
@@ -53,6 +57,7 @@ class App extends Component {
             setMirrorMode={this.setMirrorMode}
             rows={this.state.dimensions[0]}
             mirrors={this.state.mirrors}
+            divAndConq={this.divAndConq}
           />}
 
       </main>

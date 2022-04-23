@@ -18,7 +18,7 @@ class Pattern extends Component {
   }
 
   mirrorStitch = () => {
-
+    
   }
 
   toggleStitch = (e) => {
@@ -26,7 +26,7 @@ class Pattern extends Component {
     let newRow = new Map(this.state[y])
     newRow.set(parseInt(x), `${this.props.stitchType} ${this.props.stitchColor}`)
     if(this.props.mirrorMode) {
-      console.log(this.props.mirrors)
+      console.log(this.props.mirrors, 'mirrors')
       // let mirrorPosition = column / mirrors;
       let maxX = this.props.dimensions[0];
       let mirrorX = maxX - x + 1;
@@ -43,12 +43,12 @@ class Pattern extends Component {
 
   createPattern = () => {
     let pattern = [];
-    // let mirrors = 1;
+    let mirrors = parseInt(this.props.mirrors);
     for (const row in this.state) {
       let rowContainer = [];
+      let mirrorPosition = this.props.dimensions[0] / (mirrors + 1);
+      console.log(mirrorPosition)
       for (const [column, stitch] of this.state[row]) {
-        // let mirrorPosition = column / mirrors;
-        // console.log(mirrorPosition)
         let patternStitch = React.createElement('article', { id: `${row}x${column}`, className: `stitch ${stitch}`, key: column, onClick: this.toggleStitch })
         rowContainer.push(patternStitch);
       }

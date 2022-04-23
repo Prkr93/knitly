@@ -5,15 +5,22 @@ class MirrorMode extends Component {
     super(props);
     this.state = {
       mirrorMode: false,
-      mirrors: 0
+      mirrors: 1
     }
   }
 
   toggleMirrorMode = () => {
-    this.setState({mirrorMode: this.state.mirrorMode ? false : true});
-    this.props.setMirrorMode(this.state.mirrorMode);
-
+    let bool = this.state.mirrorMode ? false : true;
+    this.setState({mirrorMode: bool });
+    this.props.setMirrorMode(bool);
   }
+
+  updateMirrors = (e) => {
+    let numMirrors = e.target.value;
+    this.setState({ mirrors: numMirrors });
+    this.props.divAndConq(numMirrors);
+  }
+  
 
   render() {
     return (
@@ -29,7 +36,7 @@ class MirrorMode extends Component {
           placeholder={this.state.mirrors} 
           min={1} 
           max={this.props.rows / 2} 
-          onClick={(e) => { this.setState({ mirrors: e.target.value})}} />
+          onClick={ this.updateMirrors } /> 
       </article>
     )
   }

@@ -2,12 +2,24 @@ import React, { Component } from 'react';
 
 class Pattern extends Component {
   constructor(props) {
-    super();
+    //console.log(props.match.params)
+    //this.props.dimensions = props.match.params;
+    super(props);
+    console.log(props)
     this.state = {}
   }
 
+  // componentDidMount() {
+  // }
+
+  // render () {
+  //   return (
+  //     <div>hello</div>
+  //   )
+  // }
+
   componentDidMount() {
-    const [thisX, thisY] = this.props.dimensions;
+    const [thisX, thisY] = this.props.dimensions.split('x');
     for (let x = 1; x <= thisX; x++) {
       let row = new Map();
       for (let y = 1; y <= thisY; y++) {

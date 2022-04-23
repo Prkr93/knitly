@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import {Route, Switch} from 'react-router-dom';
 import './css/style.css';
 import Pattern from './js/Pattern';
 import Form from './js/Form';
@@ -8,12 +9,12 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
-      dimensions: [],
       stitchType: 'purl',
       stitchColor: 'white',
       mirrorMode: false
     }
   }
+  
 
   createPattern = (x, y) => {
     this.setState({dimensions: [x, y]});
@@ -24,7 +25,7 @@ class App extends Component {
   }
 
   setStitchColor = (color) => {
-    this.setState({ stitchColor: color})
+    this.setState({ stitchColor: color});
   }
 
   setMirrorMode = (bool) => {
@@ -35,25 +36,33 @@ class App extends Component {
   render() {
     return (
       <main>
-        {!this.state.dimensions[0] && <Form createPattern={this.createPattern} />}
+        <Switch>
+          <Route exact path={'/create'} render={() => {
+            return (
+              <Form createPattern={this.createPattern} />
+            )
+          }} />
 
-        {!!this.state.dimensions[0] && 
-          <Pattern 
-            dimensions={this.state.dimensions} 
-            stitchType={this.state.stitchType} 
-            stitchColor={this.state.stitchColor} 
-            mirrorMode={this.state.mirrorMode}
-          />}
-
-        {!!this.state.dimensions[0] && 
-          <SideBar 
-            setStitchType={this.setStitchType} 
-            setStitchColor={this.setStitchColor}
-            setMirrorMode={this.setMirrorMode}
-            rows={this.state.dimensions[0]}
-            divAndConq={this.divAndConq}
-          />}
-
+          <Route path={'/create/:dimensions'} render={({match}) => {
+            return (
+              <section>
+                <Pattern
+                  stitchType={this.state.stitchType}
+                  stitchColor={this.state.stitchColor}
+                  mirrorMode={this.state.mirrorMode}
+                  dimensions={match.params.dimensions}
+                />
+                <SideBar
+                  setStitchType={this.setStitchType}
+                  setStitchColor={this.setStitchColor}
+                  setMirrorMode={this.setMirrorMode}
+                  divAndConq={this.divAndConq}
+                />
+              </section>
+            )
+          }} />
+          
+        </Switch>
       </main>
     )
   }

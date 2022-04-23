@@ -1,4 +1,5 @@
 import {Component} from 'react';
+import {Redirect, Link} from 'react-router-dom';
 
 class Form extends Component {
   constructor(props) {
@@ -15,7 +16,8 @@ class Form extends Component {
 
   createGrid = (e) => {
     e.preventDefault();
-    this.props.createPattern(parseInt(this.state.x), parseInt(this.state.y))
+    // this.props.createPattern(parseInt(this.state.x), parseInt(this.state.y))
+    //<Redirect to={`/create/${this.state.x}x${this.state.y}`} />
   }
 
   render() {
@@ -30,7 +32,9 @@ class Form extends Component {
           <label>Y-Value: </label>
           <input className='y-val' name='y' val={this.state.y} onChange={this.handleChange} />
         </div>
-        <button>Create Pattern</button>
+        <Link to={`/create/${this.state.x}x${this.state.y}`}>
+          <button>Create Pattern!</button>
+        </Link>
       </form>
     )
   }

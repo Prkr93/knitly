@@ -17,8 +17,21 @@ class Pattern extends Component {
     }
   }
 
-  mirrorStitch = () => {
-    
+  getMatchingStitch = () => {
+    const legend = {
+      knit: 'purl',
+      purl: 'knit',
+      k2tog: 'ssk',
+      ssk: 'k2tog',
+    }
+    return legend[this.props.stitchType];
+  }
+
+  mirrorStitch = (newRow, x) => {
+    let maxX = this.props.dimensions[0];
+    let mirrorX = maxX - x + 1;
+    let stitchType = this.getMatchingStitch();
+    newRow.set(parseInt(mirrorX), `${stitchType} ${this.props.stitchColor}`);
   }
 
   toggleStitch = (e) => {
@@ -26,17 +39,7 @@ class Pattern extends Component {
     let newRow = new Map(this.state[y])
     newRow.set(parseInt(x), `${this.props.stitchType} ${this.props.stitchColor}`)
     if(this.props.mirrorMode) {
-      console.log(this.props.mirrors, 'mirrors')
-      // let mirrorPosition = column / mirrors;
-      let maxX = this.props.dimensions[0];
-      let mirrorX = maxX - x + 1;
-      newRow.set(parseInt(mirrorX), `${this.props.stitchType} ${this.props.stitchColor}`);
-
-      // let row = Array.from(newRow).reverse();
-      // newRow = new Map(row);
-      // newRow.set(parseInt(x), `${this.props.stitchType} ${this.props.stitchColor}`);
-      // row = Array.from(newRow).reverse();
-      // newRow = new Map(row);
+      this.mirrorStitch(newRow, x);
     }
     this.setState({[y]: newRow});
   }

@@ -11,8 +11,7 @@ class App extends Component {
       dimensions: [],
       stitchType: 'purl',
       stitchColor: 'white',
-      mirrorMode: false,
-      mirrors: 0
+      mirrorMode: false
     }
   }
 
@@ -32,9 +31,6 @@ class App extends Component {
     this.setState({mirrorMode: bool});
   }
 
-  divAndConq = (mirrors) => {
-    this.setState({mirrors: mirrors})
-  }
 
   render() {
     return (
@@ -47,7 +43,6 @@ class App extends Component {
             stitchType={this.state.stitchType} 
             stitchColor={this.state.stitchColor} 
             mirrorMode={this.state.mirrorMode}
-            mirrors={this.state.mirrors}
           />}
 
         {!!this.state.dimensions[0] && 
@@ -56,7 +51,6 @@ class App extends Component {
             setStitchColor={this.setStitchColor}
             setMirrorMode={this.setMirrorMode}
             rows={this.state.dimensions[0]}
-            mirrors={this.state.mirrors}
             divAndConq={this.divAndConq}
           />}
 

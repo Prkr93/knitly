@@ -4,8 +4,7 @@ class MirrorMode extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      mirrorMode: false,
-      mirrors: 1
+      mirrorMode: false
     }
   }
 
@@ -30,13 +29,6 @@ class MirrorMode extends Component {
           <div className='on'>ON</div>
           <div className='off'>OFF</div>
         </button>
-        <input 
-          type='number' 
-          disabled={!this.state.mirrorMode} 
-          placeholder={this.state.mirrors} 
-          min={1} 
-          max={this.props.rows / 2} 
-          onClick={ this.updateMirrors } /> 
       </article>
     )
   }

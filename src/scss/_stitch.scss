@@ -1,4 +1,7 @@
 .stitch {
-  width: 30px;
-  height: 30px;
+  width: 2em;
+  height: 2em;
+  border: 1px solid $black;
+  background-color: $white;
+  position: relative;
 }

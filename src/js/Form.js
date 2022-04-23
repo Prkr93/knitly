@@ -1,10 +1,8 @@
 import {Component} from 'react';
 
 class Form extends Component {
-  constructor({createPattern}) {
-    super();
-    //this.props = props;
-    this.createPattern = createPattern;
+  constructor(props) {
+    super(props);
     this.state = {
       x: '',
       y: ''
@@ -17,12 +15,12 @@ class Form extends Component {
 
   createGrid = (e) => {
     e.preventDefault();
-    this.createPattern(parseInt(this.state.x), parseInt(this.state.y))
+    this.props.createPattern(parseInt(this.state.x), parseInt(this.state.y))
   }
 
   render() {
     return (
-      <form onSubmit={this.createGrid}>
+      <form onSubmit={(e) => this.createGrid(e)}>
         <h2>What dimensions would you like for your pattern?</h2>
         <div className='label-input x-val'>
           <label>X-Value: </label>
@@ -32,7 +30,7 @@ class Form extends Component {
           <label>Y-Value: </label>
           <input className='y-val' name='y' val={this.state.y} onChange={this.handleChange} />
         </div>
-        <button type='submit'>Create Pattern</button>
+        <button>Create Pattern</button>
       </form>
     )
   }

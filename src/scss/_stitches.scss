@@ -1,0 +1,107 @@
+.stitch {
+  //&.knit {}
+  &.purl:after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: .625em;
+    left: .625em;
+    width: .75em;
+    height: .75em;
+    background: $black;
+    border-radius: 50%;
+  }
+  
+  &.k2tog {
+    &:before, &:after {
+      content: "";
+      display: block;
+      position: absolute;
+      background: $black;
+      width: 0.25em;
+      
+    }
+    &:before {
+      height: 1em;
+      left: 1.05em;
+      top: .8em;
+      transform: rotate(-45deg);
+    }
+    &:after {
+      height: 2em;
+      left: 0.8em;
+      transform: rotate(45deg);
+    }
+  }
+  &.ssk {
+    &:before,
+    &:after {
+      content: "";
+      display: block;
+      position: absolute;
+      background: $black;
+      width: 0.25em;
+
+    }
+
+    &:before {
+      height: 1em;
+      left: .7em;
+      top: .8em;
+      transform: rotate(45deg);
+    }
+
+    &:after {
+      height: 2em;
+      left: .95em;
+      transform: rotate(-45deg);
+    }
+  }
+  &.red {
+    background-color: $red;
+    &:before, &:after { 
+      background-color: $white;
+      border: 1px solid $black;
+    }
+  }
+  &.orange {
+    background-color: $orange;
+  }
+  &.yellow {
+    background-color: $yellow;
+  }
+  &.green {
+    background-color: $green;
+  }
+  &.blue {
+    background-color: $blue;
+    &:before, &:after {
+      background-color: $white;
+      border: 1px solid $black;
+    }
+  }
+  &.indigo {
+    background-color: $indigo;
+    &:before, &:after {
+      background-color: $white;
+      border: 1px solid $black;
+    }
+  }
+  &.violet {
+    background-color: $violet;
+    &:before, &:after {
+      background-color: $white;
+      border: 1px solid $black;
+    }
+  }
+  &.black {
+    background-color: $black;
+    &:before, &:after {
+      background-color: $white;
+      border: 1px solid $black;
+    }
+  }
+  &.white {
+    background-color: $white;
+  }
+}

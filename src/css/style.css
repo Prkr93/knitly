@@ -2,7 +2,109 @@
   display: flex;
 }
 
+.row {
+  display: flex;
+}
+
 .stitch {
-  width: 30px;
-  height: 30px;
+  width: 2em;
+  height: 2em;
+  border: 1px solid #6a6a6a;
+  background-color: #f9f9f9;
+  position: relative;
+}
+
+.stitch.purl:after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0.625em;
+  left: 0.625em;
+  width: 0.75em;
+  height: 0.75em;
+  background: #6a6a6a;
+  border-radius: 50%;
+}
+.stitch.k2tog:before, .stitch.k2tog:after {
+  content: "";
+  display: block;
+  position: absolute;
+  background: #6a6a6a;
+  width: 0.25em;
+}
+.stitch.k2tog:before {
+  height: 1em;
+  left: 1.05em;
+  top: 0.8em;
+  transform: rotate(-45deg);
+}
+.stitch.k2tog:after {
+  height: 2em;
+  left: 0.8em;
+  transform: rotate(45deg);
+}
+.stitch.ssk:before, .stitch.ssk:after {
+  content: "";
+  display: block;
+  position: absolute;
+  background: #6a6a6a;
+  width: 0.25em;
+}
+.stitch.ssk:before {
+  height: 1em;
+  left: 0.7em;
+  top: 0.8em;
+  transform: rotate(45deg);
+}
+.stitch.ssk:after {
+  height: 2em;
+  left: 0.95em;
+  transform: rotate(-45deg);
+}
+.stitch.red {
+  background-color: #E55934;
+}
+.stitch.red:before, .stitch.red:after {
+  background-color: #f9f9f9;
+  border: 1px solid #6a6a6a;
+}
+.stitch.orange {
+  background-color: #F7B32B;
+}
+.stitch.yellow {
+  background-color: #F7F052;
+}
+.stitch.green {
+  background-color: #80FF72;
+}
+.stitch.blue {
+  background-color: #0EB1D2;
+}
+.stitch.blue:before, .stitch.blue:after {
+  background-color: #f9f9f9;
+  border: 1px solid #6a6a6a;
+}
+.stitch.indigo {
+  background-color: #235789;
+}
+.stitch.indigo:before, .stitch.indigo:after {
+  background-color: #f9f9f9;
+  border: 1px solid #6a6a6a;
+}
+.stitch.violet {
+  background-color: #791E94;
+}
+.stitch.violet:before, .stitch.violet:after {
+  background-color: #f9f9f9;
+  border: 1px solid #6a6a6a;
+}
+.stitch.black {
+  background-color: #6a6a6a;
+}
+.stitch.black:before, .stitch.black:after {
+  background-color: #f9f9f9;
+  border: 1px solid #6a6a6a;
+}
+.stitch.white {
+  background-color: #f9f9f9;
 }

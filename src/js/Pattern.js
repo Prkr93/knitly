@@ -46,11 +46,8 @@ class Pattern extends Component {
 
   createPattern = () => {
     let pattern = [];
-    let mirrors = parseInt(this.props.mirrors);
     for (const row in this.state) {
       let rowContainer = [];
-      let mirrorPosition = this.props.dimensions[0] / (mirrors + 1);
-      console.log(mirrorPosition)
       for (const [column, stitch] of this.state[row]) {
         let patternStitch = React.createElement('article', { id: `${row}x${column}`, className: `stitch ${stitch}`, key: column, onClick: this.toggleStitch })
         rowContainer.push(patternStitch);

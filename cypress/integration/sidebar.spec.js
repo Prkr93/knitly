@@ -22,8 +22,6 @@ describe('MirrorMode', () => {
       .get('.row:first').within(stitches => {
           cy.get('.stitch').eq(0).click().should('have.class', 'purl')
           cy.get('.stitch').eq(4).should('have.class', 'purl')
-
-          // cy.get('.stitch').eq(0)
           cy.get('.stitch').eq(3).click().should('have.class', 'purl')
           cy.get('.stitch').eq(1).should('have.class', 'purl')
           cy.get('.stitch').eq(2).click().should('have.class', 'purl')

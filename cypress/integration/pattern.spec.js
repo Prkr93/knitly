@@ -1,5 +1,5 @@
 describe('Pattern', () => {
-  it('should automatically create a grid upon visiting the url', () => {
+  it('should automatically create a pattern grid upon visiting path create/XxY', () => {
     cy.visit('http://localhost:3000/create/5x5')
       .get('section.pattern').within(pattern => {
         cy.get('section.row').should('have.length', 5)
@@ -23,9 +23,9 @@ describe('Pattern', () => {
       })
   });
 
-  it('should redirect if entered an invalid url', () => {
+  it('should redirect if navigating to an invalid url', () => {
     cy.visit('http://localhost:3000/create/0x5', {failOnStatusCode: false})
-      .url().should('be.equals', 'http://localhost:3000/create')
+      .url().should('contain', 'http://localhost:3000/create')
   });
   
 });

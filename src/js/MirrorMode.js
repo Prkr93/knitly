@@ -25,7 +25,7 @@ class MirrorMode extends Component {
     return (
       <article>
         <h2>Mirror Mode</h2>
-        <button className='mirror-mode' onClick={this.toggleMirrorMode}>
+        <button onClick={this.toggleMirrorMode}>
           <div className='on'>ON</div>
           <div className='off'>OFF</div>
         </button>

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {Route, Switch, Redirect} from 'react-router-dom';
+import {Route, Switch} from 'react-router-dom';
 import './css/style.css';
 import Pattern from './js/Pattern';
 import Form from './js/Form';
@@ -44,11 +44,6 @@ class App extends Component {
           }} />
 
           <Route path={'/create/:dimensions'} render={({match}) => {
-            let dimensions = match.params.dimensions;
-            let [x, y] = dimensions.split('x');
-            if (x == '0' || y == '0') {
-              return (<Redirect to={'/create'} />)
-            }
             return (
               <section>
                 <Pattern
@@ -66,7 +61,6 @@ class App extends Component {
               </section>
             )
           }} />
-          
           
         </Switch>
       </main>

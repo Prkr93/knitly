@@ -25,14 +25,14 @@ class StitchOptions extends Component {
   render() {
     return (
       <div>
-        <section onClick={this.setActiveStitchType} className='stitch-types' >
+        <section onClick={this.setActiveStitchType}>
           <h2>Stitch Type:</h2>
           <article className='stitch knit'></article>
           <article className='stitch purl'></article>
           <article className='stitch k2tog'></article>
           <article className='stitch ssk'></article>
         </section>
-        <section onClick={this.setActiveColor} className='stitch-colors' >
+        <section onClick={this.setActiveColor}>
           <h2>Background Color:</h2>
           <article className='stitch red'></article>
           <article className='stitch orange'></article>

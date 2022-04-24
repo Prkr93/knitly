@@ -14,7 +14,7 @@ class App extends Component {
       mirrorMode: false
     }
   }
-  
+
 
   createPattern = (x, y) => {
     this.setState({dimensions: [x, y]});
@@ -56,6 +56,7 @@ class App extends Component {
                   stitchColor={this.state.stitchColor}
                   mirrorMode={this.state.mirrorMode}
                   dimensions={match.params.dimensions}
+                  postPattern={this.postPattern}
                 />
                 <SideBar
                   setStitchType={this.setStitchType}
@@ -66,8 +67,8 @@ class App extends Component {
               </section>
             )
           }} />
-          
-          
+
+
         </Switch>
       </main>
     )

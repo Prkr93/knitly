@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
+import servePattern from '../apiCalls';
 
 class Pattern extends Component {
   constructor(props) {
     //console.log(props.match.params)
     //this.props.dimensions = props.match.params;
     super(props);
-    console.log(props)
+    //console.log(props)
     this.state = {}
   }
 
@@ -70,11 +71,30 @@ class Pattern extends Component {
     return pattern;
   }
 
+  savePattern = () => {
+    let pattern = [];
+    for (const row in this.state) {
+      let stitches = [];
+      for(const [column, stitch] of this.state[row]) {
+        stitches.push(stitch);
+      }
+      // console.log(stitches)
+      pattern.push([row, [...stitches]])
+      // console.log(patternNests, '<<<patternNests')
+    }
+    console.log(pattern, '<<<pattern')
+
+    //servePattern(pattern);
+  }
+
   render() {
     let pattern = this.createPattern();
 
     return (
-      <section className='pattern'>{pattern}</section>
+      <section className='pattern-container'>
+        <section className='pattern'>{pattern}</section>
+        <button className='save-pattern' onClick={this.savePattern}>Save Pattern</button>
+      </section>
     )
   }
 }

@@ -1,9 +1,11 @@
 import React, { Component } from 'react';
-import {Route, Switch, Redirect} from 'react-router-dom';
+import {Route, Switch, Redirect, NavLink} from 'react-router-dom';
 import './css/style.css';
 import Pattern from './js/Pattern';
 import Form from './js/Form';
 import SideBar from './js/SideBar';
+import Inspirations from './js/Inspirations';
+import {servePattern, serveInspiration} from './apiCalls';
 
 class App extends Component {
   constructor() {
@@ -11,10 +13,14 @@ class App extends Component {
     this.state = {
       stitchType: 'purl',
       stitchColor: 'white',
-      mirrorMode: false
+      mirrorMode: false,
+      inspirations: []
     }
   }
-  
+
+  // componendDidUpdate() {
+  //   this.getInspired();
+  // }
 
   createPattern = (x, y) => {
     this.setState({dimensions: [x, y]});
@@ -32,10 +38,25 @@ class App extends Component {
     this.setState({mirrorMode: bool});
   }
 
+  addInspiration = (pattern) => {
+    servePattern(pattern);
+  }
+
+  getInspired = () => {
+    serveInspiration().then(patterns => this.setInspo(patterns));
+  }
+
+  setInspo = (patterns) => {
+    this.setState({inspirations: patterns})
+  }
+
 
   render() {
     return (
       <main>
+        <header>
+          <NavLink to={'/inspirations'}>Get Inspired</NavLink>
+        </header>
         <Switch>
           <Route exact path={'/create'} render={() => {
             return (
@@ -56,6 +77,8 @@ class App extends Component {
                   stitchColor={this.state.stitchColor}
                   mirrorMode={this.state.mirrorMode}
                   dimensions={match.params.dimensions}
+                  postPattern={this.postPattern}
+                  addInspiration={this.addInspiration}
                 />
                 <SideBar
                   setStitchType={this.setStitchType}
@@ -66,8 +89,20 @@ class App extends Component {
               </section>
             )
           }} />
-          
-          
+
+          <Route path={'/inspirations'} render={() => {
+            return (
+              <Inspirations
+                inspirations={this.state.inspirations}
+                getInspired={this.getInspired}
+              />
+            )
+          }} />
+
+          <Route default render={() => {
+            return <Redirect to={'/create'} />
+          }}/>
+
         </Switch>
       </main>
     )

@@ -5,12 +5,11 @@ const SideBar = (props) => {
   return (
     <section className='side-bar'>
       <StitchOptions setStitchType={props.setStitchType} setStitchColor={props.setStitchColor} />
-      <MirrorMode 
-        setMirrorMode={props.setMirrorMode} 
-        rows={props.rows} 
+      <MirrorMode
+        setMirrorMode={props.setMirrorMode}
+        rows={props.rows}
         divAndConq={props.divAndConq}
       />
-      {/* <SavePattern /> */}
     </section>
   )
 }

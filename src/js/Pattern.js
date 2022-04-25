@@ -1,22 +1,11 @@
 import React, { Component } from 'react';
 
+
 class Pattern extends Component {
   constructor(props) {
-    //console.log(props.match.params)
-    //this.props.dimensions = props.match.params;
     super(props);
-    console.log(props)
     this.state = {}
   }
-
-  // componentDidMount() {
-  // }
-
-  // render () {
-  //   return (
-  //     <div>hello</div>
-  //   )
-  // }
 
   componentDidMount() {
     const [thisX, thisY] = this.props.dimensions.split('x');
@@ -70,11 +59,26 @@ class Pattern extends Component {
     return pattern;
   }
 
+  savePattern = () => {
+    let pattern = {};
+    for (const row in this.state) {
+      let stitches = [];
+      for (const [column, stitch] of this.state[row]) {
+        stitches.push(stitch);
+      }
+      pattern = {...pattern, [`'${row}'`]: [...stitches]}
+    }
+    this.props.addInspiration(pattern);
+  }
+
   render() {
     let pattern = this.createPattern();
 
     return (
-      <section className='pattern'>{pattern}</section>
+      <section className='pattern-container'>
+        <section className='pattern'>{pattern}</section>
+        <button className='save-pattern' onClick={this.savePattern}>Save Pattern</button>
+      </section>
     )
   }
 }

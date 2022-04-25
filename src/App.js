@@ -4,6 +4,7 @@ import './css/style.css';
 import Pattern from './js/Pattern';
 import Form from './js/Form';
 import SideBar from './js/SideBar';
+import {servePattern, serveInspiration} from './apiCalls';
 
 class App extends Component {
   constructor() {
@@ -32,6 +33,10 @@ class App extends Component {
     this.setState({mirrorMode: bool});
   }
 
+  addInspiration = (pattern) => {
+    servePattern(pattern);
+  }
+
 
   render() {
     return (
@@ -57,6 +62,7 @@ class App extends Component {
                   mirrorMode={this.state.mirrorMode}
                   dimensions={match.params.dimensions}
                   postPattern={this.postPattern}
+                  addInspiration={this.addInspiration}
                 />
                 <SideBar
                   setStitchType={this.setStitchType}

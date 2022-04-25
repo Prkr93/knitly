@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import servePattern from '../apiCalls';
+
 
 class Pattern extends Component {
   constructor(props) {
@@ -72,19 +72,15 @@ class Pattern extends Component {
   }
 
   savePattern = () => {
-    let pattern = [];
+    let pattern = {};
     for (const row in this.state) {
       let stitches = [];
-      for(const [column, stitch] of this.state[row]) {
+      for (const [column, stitch] of this.state[row]) {
         stitches.push(stitch);
       }
-      // console.log(stitches)
-      pattern.push([row, [...stitches]])
-      // console.log(patternNests, '<<<patternNests')
+      pattern = {...pattern, [`'${row}'`]: [...stitches]}
     }
-    console.log(pattern, '<<<pattern')
-
-    //servePattern(pattern);
+    this.props.addInspiration(pattern);
   }
 
   render() {

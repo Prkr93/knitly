@@ -1,0 +1,17 @@
+.pattern-container {
+
+}
+.side-bar {
+
+}
+
+@include breakpoint(medium) {
+  .pattern-container {
+    width: 50%;
+    float: right;
+  }
+  .side-bar {
+    width: 50%;
+    float: left;
+  }
+}

@@ -1,5 +1,13 @@
-.grid .row {
+.pattern {
   display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 2em;
+}
+
+.save-pattern {
+  display: block;
+  margin: 2px auto;
 }
 
 .row {
@@ -61,6 +69,17 @@
   left: 0.95em;
   transform: rotate(-45deg);
 }
+.stitch.yo:before {
+  content: "";
+  display: block;
+  position: absolute;
+  border: 3px solid #6a6a6a;
+  border-radius: 50%;
+  top: 0.5em;
+  left: 0.5em;
+  width: 0.7em;
+  height: 0.7em;
+}
 .stitch.red {
   background-color: #E55934;
 }
@@ -107,4 +126,16 @@
 }
 .stitch.white {
   background-color: #f9f9f9;
+}
+
+@media (min-width: 720px) {
+  .pattern-container {
+    width: 50%;
+    float: right;
+  }
+
+  .side-bar {
+    width: 50%;
+    float: left;
+  }
 }

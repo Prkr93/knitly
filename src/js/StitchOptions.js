@@ -27,20 +27,25 @@ class StitchOptions extends Component {
       <div>
         <section onClick={this.setActiveStitchType} className='stitch-types' >
           <h2>Stitch Type:</h2>
-          <article className='stitch knit'></article>
-          <article className='stitch purl'></article>
-          <article className='stitch k2tog'></article>
-          <article className='stitch ssk'></article>
+          <div className='row'>
+            <article className='stitch knit'></article>
+            <article className='stitch purl'></article>
+            <article className='stitch k2tog'></article>
+            <article className='stitch ssk'></article>
+            <article className='stitch yo'></article>
+          </div>
         </section>
         <section onClick={this.setActiveColor} className='stitch-colors' >
           <h2>Background Color:</h2>
-          <article className='stitch red'></article>
-          <article className='stitch orange'></article>
-          <article className='stitch yellow'></article>
-          <article className='stitch green'></article>
-          <article className='stitch blue'></article>
-          <article className='stitch indigo'></article>
-          <article className='stitch violet'></article>
+          <div className='row'>
+            <article className='stitch red'></article>
+            <article className='stitch orange'></article>
+            <article className='stitch yellow'></article>
+            <article className='stitch green'></article>
+            <article className='stitch blue'></article>
+            <article className='stitch indigo'></article>
+            <article className='stitch violet'></article>
+          </div>
         </section>
       </div>
     )

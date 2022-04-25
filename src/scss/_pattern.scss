@@ -1,5 +1,11 @@
-.grid {
-  .row {
-    display: flex;
-  }
+.pattern {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 2em;
+}
+
+.save-pattern {
+  display: block;
+  margin: 2px auto;
 }

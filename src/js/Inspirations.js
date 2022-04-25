@@ -1,7 +1,7 @@
 import React, {useEffect} from 'react';
 
 const Inspirations = (props) => {
-  let inspiration = props.inspirations.map(patternContainer => {
+  let inspiration = props.inspirations.map((patternContainer, index) => {
     console.log(patternContainer, '<<<pat')
     let pattern = [];
     for (const row in patternContainer) {
@@ -14,7 +14,7 @@ const Inspirations = (props) => {
       let patternRow = React.createElement('section', { className: `row ${row}`, key: row }, rowContainer)
       pattern.push(patternRow);
     }
-    return pattern
+    return (<section key={index} className='pattern'>{pattern}</section>)
   });
 
   useEffect(() => {

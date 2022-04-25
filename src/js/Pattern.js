@@ -24,6 +24,7 @@ class Pattern extends Component {
       purl: 'purl',
       k2tog: 'ssk',
       ssk: 'k2tog',
+      yo: 'yo'
     }
     return legend[this.props.stitchType];
   }

@@ -1,0 +1,32 @@
+header {
+  display: flex;
+  justify-content: space-between;
+  font-family: 'Courgette', serif;
+  background-color: $primary-color;
+  h1 {
+    padding-right: 1em;
+    font-size: 2.25em;
+  }
+  nav {
+    margin-top: 2em;
+    padding-left: 1em;
+    a {
+      color: black;
+      font-size: 1.33em;
+      padding-right: 1em;
+      display: inline-table;
+      text-decoration: none;
+      &:hover {
+        cursor: pointer;
+        text-decoration: underline;
+        text-shadow: 0 0 2px $black;
+        color: $white;
+      }
+    }
+  }
+
+}
+
+body {
+  margin: 0;
+}

@@ -1,8 +1,10 @@
 .pattern-container {
-
+  background-color: $tertiary-color;
+  padding-bottom: 1em;
 }
 .side-bar {
-
+  background-color: $secondary-color;
+  padding: 1em;
 }
 
 @include breakpoint(medium) {
@@ -12,6 +14,21 @@
   }
   .side-bar {
     width: 50%;
-    float: left;
+    padding: 1em;
+    box-sizing: border-box;
+    // min-height: 100%;
+    height: 100vh;
+  }
+}
+
+@include breakpoint(large) {
+  .pattern-container {
+    width: 70%;
+  }
+  .side-bar {
+    width: 30%;
+  }
+  .main-section {
+
   }
 }

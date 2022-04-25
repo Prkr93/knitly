@@ -47,7 +47,7 @@ class App extends Component {
   }
 
   setInspo = (patterns) => {
-    this.setState({inspirations: patterns})
+    this.setState({inspirations: patterns});
   }
 
 

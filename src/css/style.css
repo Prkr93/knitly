@@ -1,3 +1,50 @@
+header {
+  display: flex;
+  justify-content: space-between;
+  font-family: "Courgette", serif;
+  background-color: #ff44cc;
+}
+header h1 {
+  padding-right: 1em;
+  font-size: 2.25em;
+}
+header nav {
+  margin-top: 2em;
+  padding-left: 1em;
+}
+header nav a {
+  color: black;
+  font-size: 1.33em;
+  padding-right: 1em;
+  display: inline-table;
+  text-decoration: none;
+}
+header nav a:hover {
+  cursor: pointer;
+  text-decoration: underline;
+  text-shadow: 0 0 2px #6a6a6a;
+  color: #f9f9f9;
+}
+
+body {
+  margin: 0;
+}
+
+form {
+  text-align: center;
+}
+form .label-input > * {
+  clear: both;
+  display: block;
+}
+form .label-input input {
+  margin: 0 auto 1em;
+}
+
+main {
+  background-color: #ffecfa;
+}
+
 .pattern {
   display: flex;
   flex-direction: column;
@@ -8,6 +55,13 @@
 .save-pattern {
   display: block;
   margin: 2px auto;
+}
+.save-pattern:hover {
+  cursor: pointer;
+}
+
+.pattern-container h3 {
+  text-align: center;
 }
 
 .row {
@@ -20,6 +74,9 @@
   border: 1px solid #6a6a6a;
   background-color: #f9f9f9;
   position: relative;
+}
+.stitch:hover {
+  cursor: pointer;
 }
 
 .stitch.purl:after {
@@ -128,6 +185,16 @@
   background-color: #f9f9f9;
 }
 
+.pattern-container {
+  background-color: #ffecfa;
+  padding-bottom: 1em;
+}
+
+.side-bar {
+  background-color: #ffc7f0;
+  padding: 1em;
+}
+
 @media (min-width: 720px) {
   .pattern-container {
     width: 50%;
@@ -136,6 +203,32 @@
 
   .side-bar {
     width: 50%;
-    float: left;
+    padding: 1em;
+    box-sizing: border-box;
+    height: 100vh;
   }
+}
+@media (min-width: 960px) {
+  .pattern-container {
+    width: 70%;
+  }
+
+  .side-bar {
+    width: 30%;
+  }
+}
+.mirror-mode {
+  padding: 0;
+  display: flex;
+}
+.mirror-mode div {
+  padding: 0.5em;
+  font-size: 1.5em;
+}
+.mirror-mode div.on.active {
+  background-color: #80FF72;
+}
+.mirror-mode div.off.active {
+  background-color: #E55934;
+  color: #f9f9f9;
 }

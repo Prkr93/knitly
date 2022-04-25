@@ -19,15 +19,15 @@ class MirrorMode extends Component {
     this.setState({ mirrors: numMirrors });
     this.props.divAndConq(numMirrors);
   }
-  
+
 
   render() {
     return (
       <article>
         <h2>Mirror Mode</h2>
         <button className='mirror-mode' onClick={this.toggleMirrorMode}>
-          <div className='on'>ON</div>
-          <div className='off'>OFF</div>
+          <div className={`on ${this.state.mirrorMode && 'active'}`}>ON</div>
+          <div className={`off ${!this.state.mirrorMode && 'active'}`}>OFF</div>
         </button>
       </article>
     )

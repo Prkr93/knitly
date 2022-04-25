@@ -1,0 +1,15 @@
+.mirror-mode {
+  padding: 0;
+  display: flex;
+  div {
+    padding: .5em;
+    font-size: 1.5em;
+    &.on.active {
+      background-color: $green;
+    }
+    &.off.active {
+      background-color: $red;
+      color: $white;
+    }
+  }
+}

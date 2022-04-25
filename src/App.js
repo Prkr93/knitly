@@ -47,7 +47,7 @@ class App extends Component {
   }
 
   setInspo = (patterns) => {
-    this.setState({inspirations: patterns})
+    this.setState({inspirations: patterns});
   }
 
 
@@ -55,9 +55,15 @@ class App extends Component {
     return (
       <main>
         <header>
-          <NavLink to={'/inspirations'}>Get Inspired</NavLink>
+          <nav>
+            <NavLink to={'/create'}>Create</NavLink>
+            <NavLink to={'/inspirations'}>Get Inspired</NavLink>
+          </nav>
+          <h1>Knitly</h1>
         </header>
+
         <Switch>
+
           <Route exact path={'/create'} render={() => {
             return (
               <Form createPattern={this.createPattern} />

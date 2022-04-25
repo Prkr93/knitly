@@ -7,3 +7,20 @@ $indigo: #235789;
 $violet: #791E94;
 $black: #6a6a6a;
 $white: #f9f9f9;
+
+$primary-color: #ff44cc;
+$secondary-color: scale-color($primary-color, $lightness: 70%);
+$tertiary-color: scale-color($primary-color, $lightness: 90%);
+
+$breakpoints: (
+  narrow: 360px,
+  small: 480px,
+  tablet: 650px,
+  medium: 720px,
+  large: 960px,
+  x-large: 1050px,
+  wide: 1200px,
+  x-wide: 1350px,
+  wider: 1500px,
+  widest: 1650px
+);

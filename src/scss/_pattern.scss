@@ -1,5 +1,24 @@
-.grid {
-  .row {
-    display: flex;
+body {
+  background-color: $tertiary-color;
+}
+
+.pattern {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2em;
+}
+
+.save-pattern {
+  display: block;
+  margin: 2px auto;
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.pattern-container {
+  h3 {
+    text-align: center;
   }
 }

@@ -1,0 +1,12 @@
+form {
+  text-align: center;
+  .label-input {
+    > * {
+      clear: both;
+      display: block;
+    }
+    input {
+      margin: 0 auto 1em;
+    }
+  }
+}

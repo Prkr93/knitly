@@ -1,5 +1,7 @@
 
-const serveInspiration = () => {}
+const serveInspiration = () => {
+  console.log('inspire')
+}
 
 const servePattern = (pattern) => {
   fetch('http://localhost:3001/inspire', {
@@ -9,4 +11,4 @@ const servePattern = (pattern) => {
   }).then(response => console.log(response))
 }
 
-export {servePattern};
+export {servePattern, serveInspiration};

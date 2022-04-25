@@ -4,6 +4,7 @@ import './css/style.css';
 import Pattern from './js/Pattern';
 import Form from './js/Form';
 import SideBar from './js/SideBar';
+import Inspirations from './js/Inspirations';
 import {servePattern, serveInspiration} from './apiCalls';
 
 class App extends Component {
@@ -35,6 +36,10 @@ class App extends Component {
 
   addInspiration = (pattern) => {
     servePattern(pattern);
+  }
+
+  getInspired = () => {
+    serveInspiration();
   }
 
 
@@ -74,6 +79,13 @@ class App extends Component {
             )
           }} />
 
+          <Route path={'/inspirations'} render={() => {
+            <Inspirations getInspired={this.getInspired} />
+          }} />
+
+          <Route default render={() => {
+            return <Redirect to={'/create'} />
+          }}/>
 
         </Switch>
       </main>

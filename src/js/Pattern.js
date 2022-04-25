@@ -77,6 +77,7 @@ class Pattern extends Component {
 
     return (
       <section className='pattern-container'>
+        <h3>Mirror Mode: {this.props.mirrorMode ? 'ON' : 'OFF'}</h3>
         <section className='pattern'>{pattern}</section>
         <button className='save-pattern' onClick={this.savePattern}>Save Pattern</button>
       </section>

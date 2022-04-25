@@ -3,21 +3,9 @@ import React, { Component } from 'react';
 
 class Pattern extends Component {
   constructor(props) {
-    //console.log(props.match.params)
-    //this.props.dimensions = props.match.params;
     super(props);
-    //console.log(props)
     this.state = {}
   }
-
-  // componentDidMount() {
-  // }
-
-  // render () {
-  //   return (
-  //     <div>hello</div>
-  //   )
-  // }
 
   componentDidMount() {
     const [thisX, thisY] = this.props.dimensions.split('x');

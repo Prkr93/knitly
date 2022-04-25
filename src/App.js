@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {Route, Switch, Redirect} from 'react-router-dom';
+import {Route, Switch, Redirect, NavLink} from 'react-router-dom';
 import './css/style.css';
 import Pattern from './js/Pattern';
 import Form from './js/Form';
@@ -13,10 +13,14 @@ class App extends Component {
     this.state = {
       stitchType: 'purl',
       stitchColor: 'white',
-      mirrorMode: false
+      mirrorMode: false,
+      inspirations: []
     }
   }
 
+  // componendDidUpdate() {
+  //   this.getInspired();
+  // }
 
   createPattern = (x, y) => {
     this.setState({dimensions: [x, y]});
@@ -39,13 +43,20 @@ class App extends Component {
   }
 
   getInspired = () => {
-    serveInspiration();
+    serveInspiration().then(patterns => this.setInspo(patterns));
+  }
+
+  setInspo = (patterns) => {
+    this.setState({inspirations: patterns})
   }
 
 
   render() {
     return (
       <main>
+        <header>
+          <NavLink to={'/inspirations'}>Get Inspired</NavLink>
+        </header>
         <Switch>
           <Route exact path={'/create'} render={() => {
             return (
@@ -80,7 +91,12 @@ class App extends Component {
           }} />
 
           <Route path={'/inspirations'} render={() => {
-            <Inspirations getInspired={this.getInspired} />
+            return (
+              <Inspirations
+                inspirations={this.state.inspirations}
+                getInspired={this.getInspired}
+              />
+            )
           }} />
 
           <Route default render={() => {

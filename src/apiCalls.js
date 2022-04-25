@@ -1,10 +1,11 @@
 
 const serveInspiration = () => {
-  console.log('inspire')
+  return fetch('http://localhost:3001/inspirations')
+    .then(res => res.json())
 }
 
 const servePattern = (pattern) => {
-  fetch('http://localhost:3001/inspire', {
+  return fetch('http://localhost:3001/inspire', {
     method: 'POST',
     headers: {'content-type':'application/json'},
     body: JSON.stringify({pattern})

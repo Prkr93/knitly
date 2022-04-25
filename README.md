@@ -8,12 +8,9 @@ Can't think of anything or would like to save your patterns? Install the knitly-
 
 # Getting Started with Knitly
 
-I had a couple of issues with cors during deployment, but hopefully will fix that ASAP. For now, you can view the site by:
-- cloning this repo
-- run `npm i`
-- run `npm start`
+Live Site is deployed [here](https://knitly-knitting.surge.sh/).
 
-Server for inspirations can be found here: https://github.com/Prkr93/knitly-server
-- clone this server
+To save and view pattern inspirations, you can download the knitly-server [here](https://github.com/Prkr93/knitly-server).
+- clone the server
 - run `npm i`
 - run 'nodemon server.js'

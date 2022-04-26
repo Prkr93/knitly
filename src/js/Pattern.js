@@ -30,17 +30,21 @@ class Pattern extends Component {
   }
 
   mirrorStitch = (newRow, x) => {
-    let maxX = this.props.dimensions[0];
-    let mirrorX = maxX - x + 1;
+    let dimensions = this.props.dimensions.split('x');
+    let numRows = parseInt(dimensions[0]);
+    let mirrorX = numRows - x + 1;
     let stitchType = this.getMatchingStitch();
     newRow.set(parseInt(mirrorX), `${stitchType} ${this.props.stitchColor}`);
   }
 
   toggleStitch = (e) => {
-    const [y, x] = e.target.id.split('x');
+    let [y, x] = e.target.id.split('x');
+    x = parseInt(x);
+    y = parseInt(y);
     let newRow = new Map(this.state[y])
     newRow.set(parseInt(x), `${this.props.stitchType} ${this.props.stitchColor}`)
     if(this.props.mirrorMode) {
+      console.log(newRow, x)
       this.mirrorStitch(newRow, x);
     }
     this.setState({[y]: newRow});

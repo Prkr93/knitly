@@ -232,3 +232,9 @@ body {
   background-color: #E55934;
   color: #f9f9f9;
 }
+
+.inspirations {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}

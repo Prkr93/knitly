@@ -48,8 +48,8 @@ body {
 .pattern {
   display: flex;
   flex-direction: column;
+  height: 100%;
   align-items: center;
-  padding: 2em;
 }
 
 .save-pattern {
@@ -66,6 +66,19 @@ body {
 
 .row {
   display: flex;
+}
+
+.pattern .row:first-of-type {
+  border-top: 2px solid #6a6a6a;
+}
+.pattern .row:last-of-type {
+  border-bottom: 2px solid #6a6a6a;
+}
+.pattern .row .stitch:first-of-type {
+  border-left: 3px solid #6a6a6a;
+}
+.pattern .row .stitch:last-of-type {
+  border-right: 3px solid #6a6a6a;
 }
 
 .stitch {
@@ -136,6 +149,44 @@ body {
   left: 0.5em;
   width: 0.7em;
   height: 0.7em;
+}
+.stitch.tta:before {
+  content: "";
+  position: absolute;
+  display: block;
+  transform: rotate(45deg);
+  border-top: 4px solid #6a6a6a;
+  border-left: 4px solid #6a6a6a;
+  height: 1em;
+  width: 1em;
+  left: 0.4em;
+  top: 0.75em;
+}
+.stitch.tta:after {
+  content: "";
+  position: absolute;
+  display: block;
+  background: #6a6a6a;
+  width: 0.225em;
+  height: 1.5em;
+  left: 0.85em;
+  top: 0.2em;
+}
+.stitch.cross:before, .stitch.cross:after {
+  content: "";
+  display: block;
+  position: absolute;
+  background: #6a6a6a;
+  width: 0.25em;
+  height: 1.75em;
+  top: 0.2em;
+  left: 0.9em;
+}
+.stitch.cross:before {
+  transform: rotate(45deg);
+}
+.stitch.cross:after {
+  transform: rotate(-45deg);
 }
 .stitch.red {
   background-color: #E55934;

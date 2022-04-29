@@ -24,7 +24,12 @@ class Pattern extends Component {
       purl: 'purl',
       k2tog: 'ssk',
       ssk: 'k2tog',
-      yo: 'yo'
+      yo: 'yo',
+      tta: 'tta',
+      cross: 'cross',
+      unravel: 'unravel',
+      cableSide1: 'cableSide2',
+      cableSide2: 'cableSide1'
     }
     return legend[this.props.stitchType];
   }
@@ -44,7 +49,7 @@ class Pattern extends Component {
     let newRow = new Map(this.state[y])
     newRow.set(parseInt(x), `${this.props.stitchType} ${this.props.stitchColor}`)
     if(this.props.mirrorMode) {
-      console.log(newRow, x)
+      
       this.mirrorStitch(newRow, x);
     }
     this.setState({[y]: newRow});

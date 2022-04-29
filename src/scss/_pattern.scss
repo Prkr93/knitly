@@ -5,8 +5,10 @@ body {
 .pattern {
   display: flex;
   flex-direction: column;
+  height: 100%;
   align-items: center;
-  padding: 2em;
+  //padding: 2em;
+  //border: 1px solid black;
 }
 
 .save-pattern {

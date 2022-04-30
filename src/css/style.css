@@ -103,38 +103,38 @@ body {
   background: #6a6a6a;
   border-radius: 50%;
 }
-.stitch.k2tog:before, .stitch.k2tog:after {
+.stitch.k2tog:before, .stitch.k2tog:after, .stitch.cableSide1:before, .stitch.cableSide1:after {
   content: "";
   display: block;
   position: absolute;
   background: #6a6a6a;
   width: 0.25em;
 }
-.stitch.k2tog:before {
+.stitch.k2tog:before, .stitch.cableSide1:before {
   height: 1em;
   left: 1.05em;
   top: 0.8em;
   transform: rotate(-45deg);
 }
-.stitch.k2tog:after {
+.stitch.k2tog:after, .stitch.cableSide1:after {
   height: 2em;
   left: 0.8em;
   transform: rotate(45deg);
 }
-.stitch.ssk:before, .stitch.ssk:after {
+.stitch.ssk:before, .stitch.ssk:after, .stitch.cableSide2:before, .stitch.cableSide2:after {
   content: "";
   display: block;
   position: absolute;
   background: #6a6a6a;
   width: 0.25em;
 }
-.stitch.ssk:before {
+.stitch.ssk:before, .stitch.cableSide2:before {
   height: 1em;
   left: 0.7em;
   top: 0.8em;
   transform: rotate(45deg);
 }
-.stitch.ssk:after {
+.stitch.ssk:after, .stitch.cableSide2:after {
   height: 2em;
   left: 0.95em;
   transform: rotate(-45deg);
@@ -187,6 +187,34 @@ body {
 }
 .stitch.cross:after {
   transform: rotate(-45deg);
+}
+.stitch.unravel:after {
+  content: "";
+  position: absolute;
+  border-top: 4px solid #6a6a6a;
+  border-left: 4px solid #6a6a6a;
+  border-right: 4px solid #6a6a6a;
+  border-radius: 50px 50px 0 0;
+  height: 1.25em;
+  width: 0.75em;
+  left: 0.4em;
+  top: 0.25em;
+}
+.stitch.cableSide1:before {
+  left: 0.5em;
+  top: 0.25em;
+}
+.stitch.cableSide1:after {
+  left: 0.9em;
+  top: 0.05em;
+}
+.stitch.cableSide2:before {
+  left: 1.25em;
+  top: 0.25em;
+}
+.stitch.cableSide2:after {
+  left: 0.9em;
+  top: 0.05em;
 }
 .stitch.red {
   background-color: #E55934;

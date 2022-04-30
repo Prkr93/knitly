@@ -14,7 +14,7 @@
     border-radius: 50%;
   }
 
-  &.k2tog {
+  &.k2tog, &.cableSide1 {
     &:before, &:after {
       content: "";
       display: block;
@@ -36,7 +36,7 @@
     }
   }
 
-  &.ssk {
+  &.ssk, &.cableSide2 {
     &:before,
     &:after {
       content: "";
@@ -118,16 +118,40 @@
 
   &.unravel {
     &:after {
-
+      content: "";
+      position: absolute;
+      border-top: 4px solid $black;
+      border-left: 4px solid $black;
+      border-right: 4px solid $black;
+      border-radius: 50px 50px 0 0;
+      height: 1.25em;
+      width: .75em;
+      left: .4em;
+      top: .25em;
     }
   }
 
   &.cableSide1 {
+    &:before {
+      left: .5em;
+      top: .25em;
+    }
+    &:after {
+      left: .9em;
+      top: .05em;
 
+    }
   }
 
   &.cableSide2 {
-
+    &:before {
+      left: 1.25em;
+      top: .25em;
+    }
+    &:after {
+      left: .9em;
+      top: .05em;
+    }
   }
 
 

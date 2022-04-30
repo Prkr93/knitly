@@ -117,7 +117,7 @@
   }
 
   &.unravel {
-    &:after {
+    &:before {
       content: "";
       position: absolute;
       border-top: 4px solid $black;
@@ -157,9 +157,17 @@
 
   &.red {
     background-color: $red;
-    &:before, &:after {
+    &:not(.yo):not(.tta):not(.unravel) {
+      &:before, &:after {
+        background-color: $white;
+        border: 1px solid $black;
+      }
+    }
+    &:before {
+      border-color: $white;
+    }
+    &:after {
       background-color: $white;
-      border: 1px solid $black;
     }
   }
   &.orange {
@@ -173,30 +181,62 @@
   }
   &.blue {
     background-color: $blue;
-    &:before, &:after {
+    &:not(.yo):not(.tta):not(.unravel) {
+      &:before, &:after {
+        background-color: $white;
+        border: 1px solid $black;
+      }
+    }
+    &:before {
+      border-color: $white;
+    }
+    &:after {
       background-color: $white;
-      border: 1px solid $black;
     }
   }
   &.indigo {
     background-color: $indigo;
-    &:before, &:after {
+    &:not(.yo):not(.tta):not(.unravel) {
+      &:before, &:after {
+        background-color: $white;
+        border: 1px solid $black;
+      }
+    }
+    &:before {
+      border-color: $white;
+    }
+    &:after {
       background-color: $white;
-      border: 1px solid $black;
     }
   }
   &.violet {
     background-color: $violet;
-    &:before, &:after {
+    &:not(.yo):not(.tta):not(.unravel) {
+      &:before, &:after {
+        background-color: $white;
+        border: 1px solid $black;
+      }
+    }
+    &:before {
+      border-color: $white;
+    }
+    &:after {
       background-color: $white;
-      border: 1px solid $black;
     }
   }
   &.black {
     background-color: $black;
-    &:before, &:after {
+    &:not(.yo):not(.tta):not(.unravel) {
+      &:before, &:after {
+        background-color: $white;
+        border: 1px solid $black;
+      }
+    }
+    &:before {
+      border-color: $white;
+    }
+    &:after {
       background-color: $white;
-      border: 1px solid $black;
     }
   }
   &.white {

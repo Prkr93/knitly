@@ -50,6 +50,7 @@ body {
   flex-direction: column;
   height: 100%;
   align-items: center;
+  padding: 1em;
 }
 
 .save-pattern {
@@ -188,7 +189,7 @@ body {
 .stitch.cross:after {
   transform: rotate(-45deg);
 }
-.stitch.unravel:after {
+.stitch.unravel:before {
   content: "";
   position: absolute;
   border-top: 4px solid #6a6a6a;
@@ -219,9 +220,15 @@ body {
 .stitch.red {
   background-color: #E55934;
 }
-.stitch.red:before, .stitch.red:after {
+.stitch.red:not(.yo):not(.tta):not(.unravel):before, .stitch.red:not(.yo):not(.tta):not(.unravel):after {
   background-color: #f9f9f9;
   border: 1px solid #6a6a6a;
+}
+.stitch.red:before {
+  border-color: #f9f9f9;
+}
+.stitch.red:after {
+  background-color: #f9f9f9;
 }
 .stitch.orange {
   background-color: #F7B32B;
@@ -235,30 +242,54 @@ body {
 .stitch.blue {
   background-color: #0EB1D2;
 }
-.stitch.blue:before, .stitch.blue:after {
+.stitch.blue:not(.yo):not(.tta):not(.unravel):before, .stitch.blue:not(.yo):not(.tta):not(.unravel):after {
   background-color: #f9f9f9;
   border: 1px solid #6a6a6a;
+}
+.stitch.blue:before {
+  border-color: #f9f9f9;
+}
+.stitch.blue:after {
+  background-color: #f9f9f9;
 }
 .stitch.indigo {
   background-color: #235789;
 }
-.stitch.indigo:before, .stitch.indigo:after {
+.stitch.indigo:not(.yo):not(.tta):not(.unravel):before, .stitch.indigo:not(.yo):not(.tta):not(.unravel):after {
   background-color: #f9f9f9;
   border: 1px solid #6a6a6a;
+}
+.stitch.indigo:before {
+  border-color: #f9f9f9;
+}
+.stitch.indigo:after {
+  background-color: #f9f9f9;
 }
 .stitch.violet {
   background-color: #791E94;
 }
-.stitch.violet:before, .stitch.violet:after {
+.stitch.violet:not(.yo):not(.tta):not(.unravel):before, .stitch.violet:not(.yo):not(.tta):not(.unravel):after {
   background-color: #f9f9f9;
   border: 1px solid #6a6a6a;
+}
+.stitch.violet:before {
+  border-color: #f9f9f9;
+}
+.stitch.violet:after {
+  background-color: #f9f9f9;
 }
 .stitch.black {
   background-color: #6a6a6a;
 }
-.stitch.black:before, .stitch.black:after {
+.stitch.black:not(.yo):not(.tta):not(.unravel):before, .stitch.black:not(.yo):not(.tta):not(.unravel):after {
   background-color: #f9f9f9;
   border: 1px solid #6a6a6a;
+}
+.stitch.black:before {
+  border-color: #f9f9f9;
+}
+.stitch.black:after {
+  background-color: #f9f9f9;
 }
 .stitch.white {
   background-color: #f9f9f9;
@@ -274,7 +305,7 @@ body {
   padding: 1em;
 }
 
-@media (min-width: 720px) {
+@media (min-width: 800px) {
   .pattern-container {
     width: 50%;
     float: right;
@@ -287,7 +318,16 @@ body {
     height: 100vh;
   }
 }
-@media (min-width: 960px) {
+@media (min-width: 1050px) {
+  .pattern-container {
+    width: 60%;
+  }
+
+  .side-bar {
+    width: 40%;
+  }
+}
+@media (min-width: 1200px) {
   .pattern-container {
     width: 70%;
   }

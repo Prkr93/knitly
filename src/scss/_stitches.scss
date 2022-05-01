@@ -165,9 +165,11 @@
     }
     &:before {
       border-color: $white;
+      box-shadow: -1px -1px 0px 1px $black;
     }
     &:after {
       background-color: $white;
+      box-shadow: 0px 0px 0px 1px $black;
     }
   }
   &.orange {
@@ -189,9 +191,11 @@
     }
     &:before {
       border-color: $white;
+      box-shadow: -1px -1px 0px 1px $black;
     }
     &:after {
       background-color: $white;
+      box-shadow: 0px 0px 0px 1px $black;
     }
   }
   &.indigo {
@@ -204,9 +208,11 @@
     }
     &:before {
       border-color: $white;
+      box-shadow: -1px -1px 0px 1px $black;
     }
     &:after {
       background-color: $white;
+      box-shadow: 0px 0px 0px 1px $black;
     }
   }
   &.violet {
@@ -219,9 +225,12 @@
     }
     &:before {
       border-color: $white;
+      box-shadow: -1px -1px 0px 1px $black;
+      // box-shadow: 2px 2px 0px 0px $black inset, -1px -1px 0px 1px $black;
     }
     &:after {
       background-color: $white;
+      box-shadow: 0px 0px 0px 1px $black;
     }
   }
   &.black {
@@ -234,12 +243,21 @@
     }
     &:before {
       border-color: $white;
+      box-shadow: -1px -1px 0px 1px $black;
     }
     &:after {
       background-color: $white;
+      box-shadow: 0px 0px 0px 1px $black;
     }
   }
   &.white {
     background-color: $white;
+  }
+  &.tta {
+    &.red, &.blue, &.indigo, &.violet {
+      &:before {
+        box-shadow: 2px 2px 0px 0px $black inset, -1px -1px 0px 1px $black;
+      }
+    }
   }
 }

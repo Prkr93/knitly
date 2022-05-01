@@ -226,9 +226,11 @@ body {
 }
 .stitch.red:before {
   border-color: #f9f9f9;
+  box-shadow: -1px -1px 0px 1px #6a6a6a;
 }
 .stitch.red:after {
   background-color: #f9f9f9;
+  box-shadow: 0px 0px 0px 1px #6a6a6a;
 }
 .stitch.orange {
   background-color: #F7B32B;
@@ -248,9 +250,11 @@ body {
 }
 .stitch.blue:before {
   border-color: #f9f9f9;
+  box-shadow: -1px -1px 0px 1px #6a6a6a;
 }
 .stitch.blue:after {
   background-color: #f9f9f9;
+  box-shadow: 0px 0px 0px 1px #6a6a6a;
 }
 .stitch.indigo {
   background-color: #235789;
@@ -261,9 +265,11 @@ body {
 }
 .stitch.indigo:before {
   border-color: #f9f9f9;
+  box-shadow: -1px -1px 0px 1px #6a6a6a;
 }
 .stitch.indigo:after {
   background-color: #f9f9f9;
+  box-shadow: 0px 0px 0px 1px #6a6a6a;
 }
 .stitch.violet {
   background-color: #791E94;
@@ -274,9 +280,11 @@ body {
 }
 .stitch.violet:before {
   border-color: #f9f9f9;
+  box-shadow: -1px -1px 0px 1px #6a6a6a;
 }
 .stitch.violet:after {
   background-color: #f9f9f9;
+  box-shadow: 0px 0px 0px 1px #6a6a6a;
 }
 .stitch.black {
   background-color: #6a6a6a;
@@ -287,12 +295,17 @@ body {
 }
 .stitch.black:before {
   border-color: #f9f9f9;
+  box-shadow: -1px -1px 0px 1px #6a6a6a;
 }
 .stitch.black:after {
   background-color: #f9f9f9;
+  box-shadow: 0px 0px 0px 1px #6a6a6a;
 }
 .stitch.white {
   background-color: #f9f9f9;
+}
+.stitch.tta.red:before, .stitch.tta.blue:before, .stitch.tta.indigo:before, .stitch.tta.violet:before {
+  box-shadow: 2px 2px 0px 0px #6a6a6a inset, -1px -1px 0px 1px #6a6a6a;
 }
 
 .pattern-container {

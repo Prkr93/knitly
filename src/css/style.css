@@ -48,8 +48,9 @@ body {
 .pattern {
   display: flex;
   flex-direction: column;
+  height: 100%;
   align-items: center;
-  padding: 2em;
+  padding: 1em;
 }
 
 .save-pattern {
@@ -66,6 +67,19 @@ body {
 
 .row {
   display: flex;
+}
+
+.pattern .row:first-of-type {
+  border-top: 2px solid #6a6a6a;
+}
+.pattern .row:last-of-type {
+  border-bottom: 2px solid #6a6a6a;
+}
+.pattern .row .stitch:first-of-type {
+  border-left: 3px solid #6a6a6a;
+}
+.pattern .row .stitch:last-of-type {
+  border-right: 3px solid #6a6a6a;
 }
 
 .stitch {
@@ -90,38 +104,38 @@ body {
   background: #6a6a6a;
   border-radius: 50%;
 }
-.stitch.k2tog:before, .stitch.k2tog:after {
+.stitch.k2tog:before, .stitch.k2tog:after, .stitch.cableSide1:before, .stitch.cableSide1:after {
   content: "";
   display: block;
   position: absolute;
   background: #6a6a6a;
   width: 0.25em;
 }
-.stitch.k2tog:before {
+.stitch.k2tog:before, .stitch.cableSide1:before {
   height: 1em;
   left: 1.05em;
   top: 0.8em;
   transform: rotate(-45deg);
 }
-.stitch.k2tog:after {
+.stitch.k2tog:after, .stitch.cableSide1:after {
   height: 2em;
   left: 0.8em;
   transform: rotate(45deg);
 }
-.stitch.ssk:before, .stitch.ssk:after {
+.stitch.ssk:before, .stitch.ssk:after, .stitch.cableSide2:before, .stitch.cableSide2:after {
   content: "";
   display: block;
   position: absolute;
   background: #6a6a6a;
   width: 0.25em;
 }
-.stitch.ssk:before {
+.stitch.ssk:before, .stitch.cableSide2:before {
   height: 1em;
   left: 0.7em;
   top: 0.8em;
   transform: rotate(45deg);
 }
-.stitch.ssk:after {
+.stitch.ssk:after, .stitch.cableSide2:after {
   height: 2em;
   left: 0.95em;
   transform: rotate(-45deg);
@@ -137,12 +151,86 @@ body {
   width: 0.7em;
   height: 0.7em;
 }
+.stitch.tta:before {
+  content: "";
+  position: absolute;
+  display: block;
+  transform: rotate(45deg);
+  border-top: 4px solid #6a6a6a;
+  border-left: 4px solid #6a6a6a;
+  height: 1em;
+  width: 1em;
+  left: 0.4em;
+  top: 0.75em;
+}
+.stitch.tta:after {
+  content: "";
+  position: absolute;
+  display: block;
+  background: #6a6a6a;
+  width: 0.225em;
+  height: 1.5em;
+  left: 0.85em;
+  top: 0.2em;
+}
+.stitch.cross:before, .stitch.cross:after {
+  content: "";
+  display: block;
+  position: absolute;
+  background: #6a6a6a;
+  width: 0.25em;
+  height: 1.75em;
+  top: 0.2em;
+  left: 0.9em;
+}
+.stitch.cross:before {
+  transform: rotate(45deg);
+}
+.stitch.cross:after {
+  transform: rotate(-45deg);
+}
+.stitch.unravel:before {
+  content: "";
+  position: absolute;
+  border-top: 4px solid #6a6a6a;
+  border-left: 4px solid #6a6a6a;
+  border-right: 4px solid #6a6a6a;
+  border-radius: 50px 50px 0 0;
+  height: 1.25em;
+  width: 0.75em;
+  left: 0.4em;
+  top: 0.25em;
+}
+.stitch.cableSide1:before {
+  left: 0.5em;
+  top: 0.25em;
+}
+.stitch.cableSide1:after {
+  left: 0.9em;
+  top: 0.05em;
+}
+.stitch.cableSide2:before {
+  left: 1.25em;
+  top: 0.25em;
+}
+.stitch.cableSide2:after {
+  left: 0.9em;
+  top: 0.05em;
+}
 .stitch.red {
   background-color: #E55934;
 }
-.stitch.red:before, .stitch.red:after {
+.stitch.red:not(.yo):not(.tta):not(.unravel):before, .stitch.red:not(.yo):not(.tta):not(.unravel):after {
   background-color: #f9f9f9;
   border: 1px solid #6a6a6a;
+}
+.stitch.red:before {
+  border-color: #f9f9f9;
+  box-shadow: -1px -1px 0px 1px #6a6a6a;
+}
+.stitch.red:after {
+  background-color: #f9f9f9;
+  box-shadow: 0px 0px 0px 1px #6a6a6a;
 }
 .stitch.orange {
   background-color: #F7B32B;
@@ -156,33 +244,68 @@ body {
 .stitch.blue {
   background-color: #0EB1D2;
 }
-.stitch.blue:before, .stitch.blue:after {
+.stitch.blue:not(.yo):not(.tta):not(.unravel):before, .stitch.blue:not(.yo):not(.tta):not(.unravel):after {
   background-color: #f9f9f9;
   border: 1px solid #6a6a6a;
+}
+.stitch.blue:before {
+  border-color: #f9f9f9;
+  box-shadow: -1px -1px 0px 1px #6a6a6a;
+}
+.stitch.blue:after {
+  background-color: #f9f9f9;
+  box-shadow: 0px 0px 0px 1px #6a6a6a;
 }
 .stitch.indigo {
   background-color: #235789;
 }
-.stitch.indigo:before, .stitch.indigo:after {
+.stitch.indigo:not(.yo):not(.tta):not(.unravel):before, .stitch.indigo:not(.yo):not(.tta):not(.unravel):after {
   background-color: #f9f9f9;
   border: 1px solid #6a6a6a;
+}
+.stitch.indigo:before {
+  border-color: #f9f9f9;
+  box-shadow: -1px -1px 0px 1px #6a6a6a;
+}
+.stitch.indigo:after {
+  background-color: #f9f9f9;
+  box-shadow: 0px 0px 0px 1px #6a6a6a;
 }
 .stitch.violet {
   background-color: #791E94;
 }
-.stitch.violet:before, .stitch.violet:after {
+.stitch.violet:not(.yo):not(.tta):not(.unravel):before, .stitch.violet:not(.yo):not(.tta):not(.unravel):after {
   background-color: #f9f9f9;
   border: 1px solid #6a6a6a;
+}
+.stitch.violet:before {
+  border-color: #f9f9f9;
+  box-shadow: -1px -1px 0px 1px #6a6a6a;
+}
+.stitch.violet:after {
+  background-color: #f9f9f9;
+  box-shadow: 0px 0px 0px 1px #6a6a6a;
 }
 .stitch.black {
   background-color: #6a6a6a;
 }
-.stitch.black:before, .stitch.black:after {
+.stitch.black:not(.yo):not(.tta):not(.unravel):before, .stitch.black:not(.yo):not(.tta):not(.unravel):after {
   background-color: #f9f9f9;
   border: 1px solid #6a6a6a;
 }
+.stitch.black:before {
+  border-color: #f9f9f9;
+  box-shadow: -1px -1px 0px 1px #6a6a6a;
+}
+.stitch.black:after {
+  background-color: #f9f9f9;
+  box-shadow: 0px 0px 0px 1px #6a6a6a;
+}
 .stitch.white {
   background-color: #f9f9f9;
+}
+.stitch.tta.red:before, .stitch.tta.blue:before, .stitch.tta.indigo:before, .stitch.tta.violet:before {
+  box-shadow: 2px 2px 0px 0px #6a6a6a inset, -1px -1px 0px 1px #6a6a6a;
 }
 
 .pattern-container {
@@ -195,7 +318,7 @@ body {
   padding: 1em;
 }
 
-@media (min-width: 720px) {
+@media (min-width: 800px) {
   .pattern-container {
     width: 50%;
     float: right;
@@ -208,7 +331,16 @@ body {
     height: 100vh;
   }
 }
-@media (min-width: 960px) {
+@media (min-width: 1050px) {
+  .pattern-container {
+    width: 60%;
+  }
+
+  .side-bar {
+    width: 40%;
+  }
+}
+@media (min-width: 1200px) {
   .pattern-container {
     width: 70%;
   }
@@ -231,4 +363,10 @@ body {
 .mirror-mode div.off.active {
   background-color: #E55934;
   color: #f9f9f9;
+}
+
+.inspirations {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
 }

@@ -1,5 +1,7 @@
 .stitch {
+
   //&.knit {}
+
   &.purl:after {
     content: '';
     display: block;
@@ -12,7 +14,7 @@
     border-radius: 50%;
   }
 
-  &.k2tog {
+  &.k2tog, &.cableSide1 {
     &:before, &:after {
       content: "";
       display: block;
@@ -33,7 +35,8 @@
       transform: rotate(45deg);
     }
   }
-  &.ssk {
+
+  &.ssk, &.cableSide2 {
     &:before,
     &:after {
       content: "";
@@ -54,6 +57,7 @@
       transform: rotate(-45deg);
     }
   }
+
   &.yo {
     &:before {
       content: "";
@@ -66,33 +70,106 @@
       width: 0.7em;
       height: 0.7em;
     }
-    // &:before,
-    // &:after {
-    //   content: "";
-    //   display: block;
-    //   position: absolute;
-    //   background: $black;
-    //   width: 0.25em;
-    // }
-    //
-    // &:before {
-    //   height: 2em;
-    //   left: .95em;
-    //   transform: rotate(-45deg);
-    // }
-    //
-    // &:after {
-    //   height: 2em;
-    //   left: .95em;
-    //   transform: rotate(45deg);
-    // }
-
   }
+
+  &.tta {
+    &:before {
+      content: "";
+      position: absolute;
+      display: block;
+      transform: rotate(45deg);
+      border-top: 4px solid $black;
+      border-left: 4px solid $black;
+      height: 1em;
+      width: 1em;
+      left: .4em;
+      top: .75em;
+    }
+    &:after {
+      content: "";
+      position: absolute;
+      display: block;
+      background: $black;
+      width: 0.225em;
+      height: 1.5em;
+      left: .85em;
+      top: .2em;
+    }
+  }
+
+  &.cross {
+    &:before, &:after {
+      content: "";
+      display: block;
+      position: absolute;
+      background: $black;
+      width: 0.25em;
+      height: 1.75em;
+      top: .2em;
+      left: .9em
+    }
+    &:before {
+      transform: rotate(45deg);
+    }
+    &:after {
+      transform: rotate(-45deg);
+    }
+  }
+
+  &.unravel {
+    &:before {
+      content: "";
+      position: absolute;
+      border-top: 4px solid $black;
+      border-left: 4px solid $black;
+      border-right: 4px solid $black;
+      border-radius: 50px 50px 0 0;
+      height: 1.25em;
+      width: .75em;
+      left: .4em;
+      top: .25em;
+    }
+  }
+
+  &.cableSide1 {
+    &:before {
+      left: .5em;
+      top: .25em;
+    }
+    &:after {
+      left: .9em;
+      top: .05em;
+
+    }
+  }
+
+  &.cableSide2 {
+    &:before {
+      left: 1.25em;
+      top: .25em;
+    }
+    &:after {
+      left: .9em;
+      top: .05em;
+    }
+  }
+
+
   &.red {
     background-color: $red;
-    &:before, &:after {
+    &:not(.yo):not(.tta):not(.unravel) {
+      &:before, &:after {
+        background-color: $white;
+        border: 1px solid $black;
+      }
+    }
+    &:before {
+      border-color: $white;
+      box-shadow: -1px -1px 0px 1px $black;
+    }
+    &:after {
       background-color: $white;
-      border: 1px solid $black;
+      box-shadow: 0px 0px 0px 1px $black;
     }
   }
   &.orange {
@@ -106,33 +183,81 @@
   }
   &.blue {
     background-color: $blue;
-    &:before, &:after {
+    &:not(.yo):not(.tta):not(.unravel) {
+      &:before, &:after {
+        background-color: $white;
+        border: 1px solid $black;
+      }
+    }
+    &:before {
+      border-color: $white;
+      box-shadow: -1px -1px 0px 1px $black;
+    }
+    &:after {
       background-color: $white;
-      border: 1px solid $black;
+      box-shadow: 0px 0px 0px 1px $black;
     }
   }
   &.indigo {
     background-color: $indigo;
-    &:before, &:after {
+    &:not(.yo):not(.tta):not(.unravel) {
+      &:before, &:after {
+        background-color: $white;
+        border: 1px solid $black;
+      }
+    }
+    &:before {
+      border-color: $white;
+      box-shadow: -1px -1px 0px 1px $black;
+    }
+    &:after {
       background-color: $white;
-      border: 1px solid $black;
+      box-shadow: 0px 0px 0px 1px $black;
     }
   }
   &.violet {
     background-color: $violet;
-    &:before, &:after {
+    &:not(.yo):not(.tta):not(.unravel) {
+      &:before, &:after {
+        background-color: $white;
+        border: 1px solid $black;
+      }
+    }
+    &:before {
+      border-color: $white;
+      box-shadow: -1px -1px 0px 1px $black;
+      // box-shadow: 2px 2px 0px 0px $black inset, -1px -1px 0px 1px $black;
+    }
+    &:after {
       background-color: $white;
-      border: 1px solid $black;
+      box-shadow: 0px 0px 0px 1px $black;
     }
   }
   &.black {
     background-color: $black;
-    &:before, &:after {
+    &:not(.yo):not(.tta):not(.unravel) {
+      &:before, &:after {
+        background-color: $white;
+        border: 1px solid $black;
+      }
+    }
+    &:before {
+      border-color: $white;
+      box-shadow: -1px -1px 0px 1px $black;
+    }
+    &:after {
       background-color: $white;
-      border: 1px solid $black;
+      box-shadow: 0px 0px 0px 1px $black;
     }
   }
   &.white {
     background-color: $white;
+  }
+  &.tta {
+    &.red, &.blue, &.indigo, &.violet {
+      &:before {
+        box-shadow: 2px 2px 0px 0px $black inset, -1px -1px 0px 1px $black;
+      }
+    }
   }
 }

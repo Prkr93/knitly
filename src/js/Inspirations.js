@@ -20,7 +20,7 @@ const Inspirations = (props) => {
   }, []);
 
   return (
-    <div>{inspiration}</div>
+    <div className='inspirations'>{inspiration}</div>
   )
 }
 

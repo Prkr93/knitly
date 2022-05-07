@@ -16,22 +16,23 @@ class Form extends Component {
 
   createGrid = (e) => {
     e.preventDefault();
-    // this.props.createPattern(parseInt(this.state.x), parseInt(this.state.y))
-    //<Redirect to={`/create/${this.state.x}x${this.state.y}`} />
   }
 
   render() {
     return (
       <form onSubmit={(e) => this.createGrid(e)}>
         <h2>What dimensions would you like for your pattern?</h2>
+
         <div className='label-input x-val'>
-          <label>X-Value: </label>
+          <label>Rows</label>
           <input className='x-val' name='x' val={this.state.x} onChange={this.handleChange} />
         </div>
+
         <div className='label-input y-val'>
-          <label>Y-Value: </label>
+          <label>Column</label>
           <input className='y-val' name='y' val={this.state.y} onChange={this.handleChange} />
         </div>
+
         <Link to={`/create/${this.state.x}x${this.state.y}`}>
           <button>Create Pattern!</button>
         </Link>

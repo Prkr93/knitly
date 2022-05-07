@@ -1,5 +1,5 @@
 import {Component} from 'react';
-import {Redirect, Link} from 'react-router-dom';
+import {Link} from 'react-router-dom';
 
 class Form extends Component {
   constructor(props) {

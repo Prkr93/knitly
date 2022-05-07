@@ -17,7 +17,7 @@ const Inspirations = (props) => {
 
   useEffect(() => {
     props.getInspired();
-  }, []);
+  }, [props]);
 
   return (
     <div className='inspirations'>{inspiration}</div>

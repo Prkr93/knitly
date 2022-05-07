@@ -49,7 +49,7 @@ class Pattern extends Component {
     let newRow = new Map(this.state[y])
     newRow.set(parseInt(x), `${this.props.stitchType} ${this.props.stitchColor}`)
     if(this.props.mirrorMode) {
-      
+
       this.mirrorStitch(newRow, x);
     }
     this.setState({[y]: newRow});
@@ -73,7 +73,7 @@ class Pattern extends Component {
     let pattern = {};
     for (const row in this.state) {
       let stitches = [];
-      for (const [column, stitch] of this.state[row]) {
+      for (const [ , stitch] of this.state[row]) {
         stitches.push(stitch);
       }
       pattern = {...pattern, [`'${row}'`]: [...stitches]}

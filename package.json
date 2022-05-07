@@ -15,11 +15,10 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
+    "test": "react-scripts test",
     "eject": "react-scripts eject",
     "cypress": "./node_modules/.bin/cypress open",
-    "sass": "sass src/scss:src/css --watch --no-source-map",
-    "cy:run": "cypress run",
-    "test": "start-server-and-test start http://localhost:3000 cy:run"
+    "sass": "sass src/scss:src/css --watch --no-source-map"
   },
   "eslintConfig": {
     "extends": [
@@ -41,7 +40,6 @@
   },
   "devDependencies": {
     "cypress": "^9.5.3",
-    "sass": "^1.49.9",
-    "start-server-and-test": "^1.14.0"
+    "sass": "^1.49.9"
   }
 }

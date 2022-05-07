@@ -19,7 +19,7 @@
     "cypress": "./node_modules/.bin/cypress open",
     "sass": "sass src/scss:src/css --watch --no-source-map",
     "cy:run": "cypress run",
-    "test": "start-server-and-test start http://localhost:3030 cy:run"
+    "test": "start-server-and-test start http://localhost:3000 cy:run"
   },
   "eslintConfig": {
     "extends": [

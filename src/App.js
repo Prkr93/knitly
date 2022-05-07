@@ -73,7 +73,7 @@ class App extends Component {
           <Route path={'/create/:dimensions'} render={({match}) => {
             let dimensions = match.params.dimensions;
             let [x, y] = dimensions.split('x');
-            if (x == '0' || y == '0') {
+            if (x === '0' || y === '0') {
               return (<Redirect to={'/create'} />)
             }
             return (

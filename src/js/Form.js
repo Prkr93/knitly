@@ -29,7 +29,7 @@ class Form extends Component {
         </div>
 
         <div className='label-input y-val'>
-          <label>Column</label>
+          <label>Columns</label>
           <input className='y-val' name='y' val={this.state.y} onChange={this.handleChange} />
         </div>
 

@@ -9,7 +9,6 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
 
-      - run: CI=false
       # Install NPM dependencies, cache them correctly
       # and run all Cypress tests
       - name: Cypress run

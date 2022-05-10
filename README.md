@@ -7,6 +7,18 @@ Create your own knitting chart with ease using this app. Toggle through differen
 Can't think of anything or would like to save your patterns? Install the knitly-server to save and view any of your patterns, or get inspired by some provided patterns!
 
 
+
+![Knitly App Demo With Mirror Mode](https://user-images.githubusercontent.com/90285348/167713299-bc751a4f-2d64-4e4d-99ed-821ecc9c4bf2.gif)
+
+![Knitly Inspirations utilizing Express Server](https://user-images.githubusercontent.com/90285348/167714848-5560c2ec-3002-477e-a874-ac138e486dac.png)
+
+![Knitly Inspirations utilizing Express Server](https://user-images.githubusercontent.com/90285348/167714906-4fc60835-f883-4023-a369-fdddd397f8e9.png)
+
+![Knitly Inspirations utilizing Express Server](https://user-images.githubusercontent.com/90285348/167714927-299d050b-3376-4f22-8e7a-4257254ad968.png)
+
+
+
+
 ## Goals
 
 - Develop an app serving a niche audience that solves a problem specific to them.
